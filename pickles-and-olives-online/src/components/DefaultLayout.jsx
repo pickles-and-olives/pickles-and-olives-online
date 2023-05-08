@@ -1,16 +1,15 @@
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function DefaultLayout({ children, bgColour }) {
+export default function DefaultLayout({ children, colour }) {
   return (
     <>
-    <Header />
+    <Header colour={colour}/>
       
-      <div className='w-full pb-10'
-      style={{ backgroundColor: bgColour }}>
+      <div className='w-full h-full min-h-screen pb-10'>
       {children}
       </div>
-      <Footer />
+      <Footer colour={colour}/>
     </>
   );
 }

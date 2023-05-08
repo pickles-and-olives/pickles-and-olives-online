@@ -4,7 +4,7 @@ import CipherGame from "../components/CipherGame";
 export default function CaesarCipherPage() {
   return (
     <>
-    <DefaultLayout>
+    <DefaultLayout colour={'#6A8EAE'}>
       <h1 className="p-6 text-center font-mono text-themeDark">caesar cipher cracker</h1>
       <div className="flex flex-col w-2/3 m-auto text-center text-themeDark">
         <p>
