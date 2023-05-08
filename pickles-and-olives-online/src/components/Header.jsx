@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <div className='flex flex-row justify-between items-center bg-themeYellow p-4 w-full'>
             <div className='flex flex-row items-center'>
-            <img src='./public/Picklemoji.gif' className='max-h-20'/>
+            <img src='../public/Picklemoji.gif' className='max-h-20'/>
             <NavLink to='/'>
             <h2 className='text-lg p-4'>pickles + olives online</h2>
             </NavLink>
