@@ -12,7 +12,7 @@ export default function AboutPage() {
           <h3 className='p-4 text-2xl'>the name</h3>
           <p className='mx-auto'>
             The name of this page is inspired by a rashly chosen GitHub username;
-            pickles-and-olives, which in turn was inspired by my two cats very thoughtfully chosen
+            pickles-and-olives, which in turn was inspired by my two cat's very thoughtfully chosen
             names; Pickle and Olive.
           </p>
         </div>
