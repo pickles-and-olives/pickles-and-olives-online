@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <DefaultLayout colour={'#CC7774'}>
       <div className='flex w-full flex-col text-center'>
-        <h1 className='p-4'>About</h1>
+        <h1 className='p-4'>about</h1>
         <div className='mx-auto w-2/3'>
           <h3 className='p-4 text-2xl'>the name</h3>
           <p className='mx-auto'>
