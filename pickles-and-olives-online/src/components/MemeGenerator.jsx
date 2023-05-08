@@ -74,14 +74,14 @@ export const MemeGenerator = () => {
 
   return (
     <div className='bg-themeblue/50 m-auto flex w-4/5 flex-col p-4 text-center'>
-        <div className='flex flex-row items-end p-2'>
-        <span className='text-themeGreen font-mono text-5xl p-2'>1.</span>
-      <h1 className='p-2'> select your template: </h1>
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+      <div className='flex flex-row items-end p-2'>
+        <span className='p-2 font-mono text-5xl text-themeGreen'>1.</span>
+        <h1 className='p-2'> select your template: </h1>
+        <hr className='my-8 h-px border-0 bg-gray-200 dark:bg-gray-700'></hr>
       </div>
-      <div className='flex flex-row items-start p-4 w-4/5 m-auto'>
+      <div className='m-auto flex w-4/5 flex-row items-start p-4'>
         {templates.map((template) => (
-          <div className='text-center m-auto w-1/2 justify-start' key={template.templateUrl}>
+          <div className='m-auto w-1/2 justify-start text-center' key={template.templateUrl}>
             <label key={template.templateUrl} />
             <input
               type='radio'
@@ -89,61 +89,66 @@ export const MemeGenerator = () => {
               value={template.templateUrl}
               checked={selectedTemplate.templateUrl === template.templateUrl}
               onChange={() => {
-                console.log(selectedTemplate);
                 setSelectedTemplate(template);
               }}
             />
-            <img src={template.templateUrl} alt={template.name} className='max-h-1/2 object-cover p-2'/>
-            
+            <img
+              src={template.templateUrl}
+              alt={template.name}
+              className='max-h-1/2 object-cover p-2'
+            />
           </div>
         ))}
       </div>
       <div className='flex flex-row items-end p-2'>
-        <span className='text-themeGreen font-mono text-5xl p-2'>2.</span>
-      <h1 className='p-2'> enter your text: </h1>
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        <span className='p-2 font-mono text-5xl text-themeGreen'>2.</span>
+        <h1 className='p-2'> enter your text: </h1>
+        <hr className='my-8 h-px border-0 bg-gray-200 dark:bg-gray-700'></hr>
       </div>
-      <div className='flex flex-col w-2/3 mx-auto my-2'>
-      {selectedTemplate.memeTextSpaces == 2 && (
-        <>
-        <label>Top text: </label>
-        <input type='text' 
-        className='border-2 border-themeYellow m-2'
-        value={topText} 
-        onChange={(event) => setTopText(event.target.value)} />
-         </>
-      )}
-      <label>Bottom text: </label>
-      <input
-        type='text'
-        className='border-2 border-themeYellow m-2'
-        value={bottomText}
-        onChange={(event) => setBottomText(event.target.value)}
-      />
-      <div>
-      <GreenButton
-        type='submit'
-        disabled={isLoading}
-        buttonText={'Generate'}
-        action={handleSubmit}
-      />
-      </div>
+      <div className='mx-auto my-2 flex w-2/3 flex-col'>
+        {selectedTemplate.memeTextSpaces == 2 && (
+          <>
+            <label>Top text: </label>
+            <input
+              type='text'
+              className='m-2 border-2 border-themeYellow'
+              value={topText}
+              onChange={(event) => setTopText(event.target.value)}
+            />
+          </>
+        )}
+        <label>Bottom text: </label>
+        <input
+          type='text'
+          className='m-2 border-2 border-themeYellow'
+          value={bottomText}
+          onChange={(event) => setBottomText(event.target.value)}
+        />
+        <div>
+          <GreenButton
+            type='submit'
+            disabled={isLoading}
+            buttonText={'Generate'}
+            action={handleSubmit}
+          />
+        </div>
       </div>
 
       {isLoading && <p>Loading...</p>}
-      {memeImageUrl && 
-      <div>
-      <div className='flex flex-row items-end p-2'>
-         <span className='text-themeGreen font-mono text-5xl p-2'>3.</span>
-        <h1 className='p-2'>enjoy your meme: </h1>
+      {memeImageUrl && (
+        <div>
+          <div className='flex flex-row items-end p-2'>
+            <span className='p-2 font-mono text-5xl text-themeGreen'>3.</span>
+            <h1 className='p-2'>enjoy your meme: </h1>
+          </div>
+          <img src={memeImageUrl} alt='Generated Meme' className='m-auto w-1/2 p-6' />
         </div>
-      <img src={memeImageUrl} alt='Generated Meme' className='w-1/2 m-auto p-6' />
-      </div>}
-      {showDownloadButton && 
-      <div className='text-center'>
-      <BlueButton buttonText={'Download your meme'} action={handleDownload} />
-      </div>
-      }
+      )}
+      {showDownloadButton && (
+        <div className='text-center'>
+          <BlueButton buttonText={'Download your meme'} action={handleDownload} />
+        </div>
+      )}
     </div>
   );
 };
