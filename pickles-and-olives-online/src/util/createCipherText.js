@@ -4,8 +4,6 @@ export function getSecretOffset() {
 }
 
 export function cipher(message, offset) {
-
-
   if (offset < 0) {
     return cipher(message, offset + 26);
   }

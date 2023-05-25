@@ -1,30 +1,32 @@
-import { useState } from "react";
-import { alphabetArray } from "../data/alphabet";
+import { useState } from 'react';
+import { alphabetArray } from '../data/alphabet';
 
 export default function CipherGameWorkArea() {
-    const [letterSelected, setLetterSelected] = useState('');
+  const [letterSelected, setLetterSelected] = useState('');
 
-    const handleLetterClick = (letter) => {
-        setLetterSelected(letter);
-
-    }
+  const handleLetterClick = (letter) => {
+    setLetterSelected(letter);
+  };
 
   return (
-    <div className='p-6 w-5/6 m-auto'>
-      <div className="flex flex-row justify-around flex-wrap">
-        {alphabetArray.map((letter, index) => 
-            <p className={`text-black px-2 hover:bg-themeBlue hover:rounded-md hover:cursor-pointer ${letterSelected === letter ? 'bg-themeBlue rounded-md' : ''}`} 
+    <div className='m-auto w-5/6 p-6'>
+      <div className='flex flex-row flex-wrap justify-around'>
+        {alphabetArray.map((letter, index) => (
+          <p
+            className={`px-2 text-black hover:cursor-pointer hover:rounded-md hover:bg-themeBlue ${
+              letterSelected === letter ? 'rounded-md bg-themeBlue' : ''
+            }`}
             key={index}
             onClick={() => handleLetterClick(letter)}
-            >
-                {letter}
-                </p>
-        )}
+          >
+            {letter}
+          </p>
+        ))}
       </div>
 
       <textarea
         placeholder='Use this space to write notes if you require.'
-        className='m-4 p-4 rounded-md w-1/2'
+        className='m-4 w-1/2 rounded-md p-4'
       ></textarea>
     </div>
   );

@@ -117,8 +117,8 @@ export default function GuessTheWordGame({ targetWord, setAdminMessage }) {
 
   return (
     <>
-      <div className='mx-auto grid grid-row sm:grid-cols-2 w-3/4 flex-col text-center items-center bg-transparent'>
-      <div className='grid sm:grid-cols-2 p-6 text-center items-center justify-center'>
+      <div className='grid-row mx-auto grid w-3/4 flex-col items-center bg-transparent text-center sm:grid-cols-2'>
+        <div className='grid items-center justify-center p-6 text-center sm:grid-cols-2'>
           <input
             type='text'
             value={guess}
@@ -133,40 +133,39 @@ export default function GuessTheWordGame({ targetWord, setAdminMessage }) {
             }}
           ></input>
 
-          <PinkButton buttonText={'Submit guess'} action={handleSubmitGuess}/>
+          <PinkButton buttonText={'Submit guess'} action={handleSubmitGuess} />
           <div>{wordError && <span> {wordErrorMessage} </span>}</div>
           {hasWon && (
-          <div>
-            <p>Woohoo you got it! The word was {targetWord} 💃</p>
-            <p>It took you {guessCount} guesses and </p>
-            {startTime && endTime && <p>Time taken: {(endTime - startTime) / 1000} seconds</p>}
-          </div>
-        )}
+            <div>
+              <p>Woohoo you got it! The word was {targetWord} 💃</p>
+              <p>It took you {guessCount} guesses and </p>
+              {startTime && endTime && <p>Time taken: {(endTime - startTime) / 1000} seconds</p>}
+            </div>
+          )}
         </div>
-        
+
         <div>
-        <div className=''>
-          <div className='grid grid-cols-2 gap-6 items-end border-b-2 border-themeBlue pb-2'>
-          {sortedBeforeGuesses.length != 0 && <p className='col-span-1'>The word is after:</p>}
-          <ul className='col-span-1'>
-          {sortedBeforeGuesses.map((word, index) => (
-            <li key={index}>{word}</li>
-          ))}
-          </ul>
-          </div>
-          
-          <div className='grid grid-cols-2 gap-6 items-start pt-2'>
-          {sortedAfterGuesses.length != 0 && <p>The word is before:</p>}
-          <ul>
-          {sortedAfterGuesses.map((word, index) => (
-            <li key={index}>{word}</li>
-          ))}
-          </ul>
-          </div>
+          <div className=''>
+            <div className='grid grid-cols-2 items-end gap-6 border-b-2 border-themeBlue pb-2'>
+              {sortedBeforeGuesses.length != 0 && <p className='col-span-1'>The word is after:</p>}
+              <ul className='col-span-1'>
+                {sortedBeforeGuesses.map((word, index) => (
+                  <li key={index}>{word}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className='grid grid-cols-2 items-start gap-6 pt-2'>
+              {sortedAfterGuesses.length != 0 && <p>The word is before:</p>}
+              <ul>
+                {sortedAfterGuesses.map((word, index) => (
+                  <li key={index}>{word}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        </div>
-       
+      </div>
     </>
   );
 }

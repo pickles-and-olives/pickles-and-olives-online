@@ -27,7 +27,6 @@ export default function CipherGame() {
     setEncryptedMessage(cipherText);
   };
 
-
   const handleSubmit = () => {
     const tempDecrypt = decipher(encryptedMessage, chosenOffset);
     setDecryptedMessage(tempDecrypt);
@@ -36,7 +35,6 @@ export default function CipherGame() {
       setWin(true);
     }
   };
-
 
   const handleRevealAnswer = () => {
     setRevealAnswer(!revealAnswer);
@@ -50,17 +48,17 @@ export default function CipherGame() {
 
   return (
     <>
-      <div className='mx-auto my-6 w-full h-full bg-themeBlue/30 p-6 text-center text-themeDark'>
+      <div className='mx-auto my-6 h-full w-full bg-themeBlue/30 p-6 text-center text-themeDark'>
         <h3 className='p-2 text-lg font-semibold'>Encrypted message: </h3>
-        <h4 className='m-auto w-1/2 border-2 border-themeBlue rounded-md bg-themeDark text-white p-2 font-mono'>
+        <h4 className='m-auto w-1/2 rounded-md border-2 border-themeBlue bg-themeDark p-2 font-mono text-white'>
           {encryptedMessage}
         </h4>
 
-        <div className='p-4 flex flex-col w-1/2 m-auto items-center'>
+        <div className='m-auto flex w-1/2 flex-col items-center p-4'>
           <h3 className='p-2 text-lg font-semibold'>Enter the offset to decode the message: </h3>
           <input
             type='number'
-            className='m-2 rounded-md border-2 border-themeBlue p-2 w-1/4'
+            className='m-2 w-1/4 rounded-md border-2 border-themeBlue p-2'
             value={chosenOffset}
             onChange={(e) => setChosenOffset(e.target.value)}
           />
@@ -68,29 +66,47 @@ export default function CipherGame() {
         </div>
         <span className='text-sm'>Guesses made: {guessCount}</span>
         <div className='p-2'>
-          <h3 className='text-lg font-semibold p-2'>Message decrypted using provided offset: </h3>
-          <textarea className='bg-white rounded-md w-1/2 p-2 min-h-min m-2' readOnly value={decryptedMessage} placeholder='Enter an offset above to view a decryption'></textarea>
+          <h3 className='p-2 text-lg font-semibold'>Message decrypted using provided offset: </h3>
+          <textarea
+            className='m-2 min-h-min w-1/2 rounded-md bg-white p-2'
+            readOnly
+            value={decryptedMessage}
+            placeholder='Enter an offset above to view a decryption'
+          ></textarea>
         </div>
 
-        <div className='py-2 w-1/2 m-auto flex flex-col items-center sm:flex-row justify-center'>
-          <PinkButton buttonText={'try a new message'} action={handleGetNewMessage} className='flex-1'/>
+        <div className='m-auto flex w-1/2 flex-col items-center justify-center py-2 sm:flex-row'>
+          <PinkButton
+            buttonText={'try a new message'}
+            action={handleGetNewMessage}
+            className='flex-1'
+          />
 
-          <BlueButton buttonText={revealAnswer ? 'hide answer' : 'reveal answer'} action={handleRevealAnswer} className='flex-1'/>
+          <BlueButton
+            buttonText={revealAnswer ? 'hide answer' : 'reveal answer'}
+            action={handleRevealAnswer}
+            className='flex-1'
+          />
         </div>
         {win && (
-           <div className='w-1/2 m-auto'>
-           <h2 className='text-xl font-semibold'>You got it!</h2>
-           <p className='mx-auto my-2 w-1/2 border-2 border-themeBlue rounded-md bg-themeDark text-white p-1 font-mono'>{secretMessage}</p>
-           <BlueButton buttonText={'Play again?'} action={handleGetNewMessage}/>
-           
-         </div>
+          <div className='m-auto w-1/2'>
+            <h2 className='text-xl font-semibold'>You got it!</h2>
+            <p className='mx-auto my-2 w-1/2 rounded-md border-2 border-themeBlue bg-themeDark p-1 font-mono text-white'>
+              {secretMessage}
+            </p>
+            <BlueButton buttonText={'Play again?'} action={handleGetNewMessage} />
+          </div>
         )}
         {revealAnswer && (
           <div>
             <h4 className='text-lg font-semibold'>The message was:</h4>
-            <p className='mx-auto my-2 w-1/2 border-2 border-themeBlue rounded-md bg-themeDark text-white p-1 font-mono'>{secretMessage}</p>
+            <p className='mx-auto my-2 w-1/2 rounded-md border-2 border-themeBlue bg-themeDark p-1 font-mono text-white'>
+              {secretMessage}
+            </p>
             <h4 className='text-lg font-semibold'>and the cipher offset was: </h4>
-            <p className='mx-auto my-2 w-1/4 border-2 border-themeBlue rounded-md bg-themeDark text-white p-1 font-mono'>{secretOffset}</p>
+            <p className='mx-auto my-2 w-1/4 rounded-md border-2 border-themeBlue bg-themeDark p-1 font-mono text-white'>
+              {secretOffset}
+            </p>
           </div>
         )}
 

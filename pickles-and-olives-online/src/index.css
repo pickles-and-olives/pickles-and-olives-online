@@ -46,13 +46,12 @@ button {
   transition: border-color 0.25s;
 }
 
-
-
-textarea, input, textarea:focus, input:focus {
-  outline: 4px auto #6A8EAE;
+textarea,
+input,
+textarea:focus,
+input:focus {
+  outline: 4px auto #6a8eae;
 }
-
-
 
 @media (prefers-color-scheme: light) {
   :root {

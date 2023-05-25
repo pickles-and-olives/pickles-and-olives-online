@@ -49,7 +49,7 @@ export default function GuessTheWordBoard() {
     <>
       <div className='mx-auto p-4 text-center'>
         <div className='h-screen bg-gradient-to-b from-themeBlue/30 '>
-          <div className='mx-auto sm:grid w-full sm:grid-cols-4 items-center p-4 text-center'>
+          <div className='mx-auto w-full items-center p-4 text-center sm:grid sm:grid-cols-4'>
             <div className='flex flex-col items-center'>
               <h3>Select your difficulty: </h3>
               <select
