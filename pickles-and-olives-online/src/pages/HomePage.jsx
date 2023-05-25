@@ -15,6 +15,11 @@ export default function HomePage() {
          
           <div className='mx-auto my-4 flex w-full flex-col text-center'>
             <h1 className='p-4'>explore</h1>
+            <div className='bg-themePink p-4'>
+            <Link to='/guess-the-word' className='p-6 text-4xl hover:text-white hover:underline'>
+              guess the word
+            </Link>
+            </div>
             <div className='bg-themeGreen p-4'>
             <Link to='/memes' className='p-6 text-4xl hover:text-white hover:underline'>
               make a meme

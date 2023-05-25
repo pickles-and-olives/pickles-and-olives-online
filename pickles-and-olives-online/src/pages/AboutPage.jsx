@@ -1,7 +1,7 @@
 import DefaultLayout from '../components/DefaultLayout';
 import kitten from '../assets/kitten.png';
 import { Link } from 'react-router-dom';
-import Resume from '../../public/Melissa MCFADZIEN_May_23.pdf';
+import Resume from '../../src/Melissa MCFADZIEN_May_23.pdf';
 
 export default function AboutPage() {
   return (

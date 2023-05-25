@@ -13,6 +13,11 @@ export default function Header({ colour }) {
             </div>
             <div className='flex flex-row'>
             <div>
+            <NavLink to='/guess-the-word'>
+            <h2 className='p-4'>guess a word</h2>
+            </NavLink>
+            </div>
+            <div>
             <NavLink to='/memes'>
             <h2 className='p-4'>make a meme</h2>
             </NavLink>

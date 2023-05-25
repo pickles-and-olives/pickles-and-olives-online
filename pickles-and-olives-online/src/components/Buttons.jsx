@@ -3,7 +3,7 @@ export function PinkButton({ buttonText, action, disabled }) {
       <button
         onClick={action}
         disabled={disabled}
-        className='p-2 m-1 border-2 whitespace-nowrap w-1/2 rounded-md border-themePink text-themePink hover:ring-2 ring-themePink/50 transition duration-500 ease-in-out'
+        className='p-2 m-1 border-2 whitespace-nowrap rounded-md border-themePink text-themePink hover:ring-2 ring-themePink/50 transition duration-500 ease-in-out'
       >
         {buttonText}
       </button>
