@@ -3,7 +3,7 @@ import Picklemoji from '../assets/Picklemoji.gif';
 
 export default function Header({ colour }) {
     return (
-        <div className='flex flex-row justify-between items-center p-4 w-full'
+        <div className='flex flex-col sm:flex-row justify-between items-center p-4 w-full'
         style={{ backgroundColor: colour }}>
             <div className='flex flex-row items-center'>
             <img src={Picklemoji} className='max-h-20'/>

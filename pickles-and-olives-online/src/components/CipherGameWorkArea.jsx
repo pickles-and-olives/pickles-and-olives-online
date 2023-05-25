@@ -11,7 +11,7 @@ export default function CipherGameWorkArea() {
 
   return (
     <div className='p-6 w-5/6 m-auto'>
-      <div className="flex flex-row justify-around">
+      <div className="flex flex-row justify-around flex-wrap">
         {alphabetArray.map((letter, index) => 
             <p className={`text-black px-2 hover:bg-themeBlue hover:rounded-md hover:cursor-pointer ${letterSelected === letter ? 'bg-themeBlue rounded-md' : ''}`} 
             key={index}

@@ -6,9 +6,9 @@ export default function HomePage() {
     <>
       <DefaultLayout colour={'#FCBF49'}>
         <div>
-          <div className='w-2/3 mx-auto p-8 text-center'>
+          <div className=' w-full sm:w-2/3 mx-auto p-8 text-center'>
             <h1>hello</h1>
-            <p className='w-2/3 m-auto p-2'>
+            <p className='w-full sm:w-2/3 m-auto p-2'>
               Thanks for visiting! I'm Melissa, and this is a space I created to experiment with fun / silly / interesting development ideas and technologies. </p>
               <h3>If you're interested, you can find more info about me <Link to='/about' className='hover:underline'>here.</Link></h3>
           </div>

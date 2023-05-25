@@ -72,7 +72,7 @@ export default function CipherGame() {
           <textarea className='bg-white rounded-md w-1/2 p-2 min-h-min m-2' readOnly value={decryptedMessage} placeholder='Enter an offset above to view a decryption'></textarea>
         </div>
 
-        <div className='py-2 w-1/2 m-auto flex flex-row justify-center'>
+        <div className='py-2 w-1/2 m-auto flex flex-col items-center sm:flex-row justify-center'>
           <PinkButton buttonText={'try a new message'} action={handleGetNewMessage} className='flex-1'/>
 
           <BlueButton buttonText={revealAnswer ? 'hide answer' : 'reveal answer'} action={handleRevealAnswer} className='flex-1'/>

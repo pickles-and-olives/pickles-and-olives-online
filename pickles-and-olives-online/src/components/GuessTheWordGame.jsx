@@ -117,8 +117,8 @@ export default function GuessTheWordGame({ targetWord, setAdminMessage }) {
 
   return (
     <>
-      <div className='mx-auto grid grid-cols-2 w-3/4 flex-col text-center items-center bg-transparent'>
-      <div className='grid grid-cols-2 p-6 text-center items-center justify-center'>
+      <div className='mx-auto grid grid-row sm:grid-cols-2 w-3/4 flex-col text-center items-center bg-transparent'>
+      <div className='grid sm:grid-cols-2 p-6 text-center items-center justify-center'>
           <input
             type='text'
             value={guess}

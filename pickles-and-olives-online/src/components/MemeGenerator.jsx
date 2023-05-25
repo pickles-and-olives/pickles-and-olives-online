@@ -75,11 +75,11 @@ export const MemeGenerator = () => {
   return (
     <div className='bg-themeblue/50 m-auto flex w-4/5 flex-col p-4 text-center'>
       <div className='flex flex-row items-end p-2'>
-        <span className='p-2 font-mono text-5xl text-themeGreen'>1.</span>
+        <span className='p-2 font-mono text-3xl sm:text-5xl text-themeGreen'>1.</span>
         <h1 className='p-2'> select your template: </h1>
         <hr className='my-8 h-px border-0 bg-gray-200 dark:bg-gray-700'></hr>
       </div>
-      <div className='m-auto flex w-4/5 flex-row items-start p-4'>
+      <div className='m-auto flex sm:w-4/5 flex-row items-start p-4'>
         {templates.map((template) => (
           <div className='m-auto w-1/2 justify-start text-center' key={template.templateUrl}>
             <label key={template.templateUrl} />
@@ -101,7 +101,7 @@ export const MemeGenerator = () => {
         ))}
       </div>
       <div className='flex flex-row items-end p-2'>
-        <span className='p-2 font-mono text-5xl text-themeGreen'>2.</span>
+        <span className='p-2 font-mono text-3xl sm:text-5xl text-themeGreen'>2.</span>
         <h1 className='p-2'> enter your text: </h1>
         <hr className='my-8 h-px border-0 bg-gray-200 dark:bg-gray-700'></hr>
       </div>
@@ -138,7 +138,7 @@ export const MemeGenerator = () => {
       {memeImageUrl && (
         <div>
           <div className='flex flex-row items-end p-2'>
-            <span className='p-2 font-mono text-5xl text-themeGreen'>3.</span>
+            <span className='p-2 font-mono text-3xl sm:text-5xl text-themeGreen'>3.</span>
             <h1 className='p-2'>enjoy your meme: </h1>
           </div>
           <img src={memeImageUrl} alt='Generated Meme' className='m-auto w-1/2 p-6' />
