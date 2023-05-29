@@ -1,7 +1,7 @@
 import DefaultLayout from '../components/DefaultLayout';
 import kitten from '../assets/kitten.png';
 import { Link } from 'react-router-dom';
-import Resume from '../../src/Melissa MCFADZIEN_May_23.pdf';
+import Resume from '../../src/Melissa MCFADZIEN - May 2023 - V2.pdf';
 
 export default function AboutPage() {
   return (
@@ -41,13 +41,13 @@ export default function AboutPage() {
         </div>
         <h3 className='p-4 text-2xl'>links etc.</h3>
         <ul>
-          <a href={Resume}>
+          <a href={Resume} target="_blank">
             <li> my resume</li>
           </a>
-          <a href='https://github.com/pickles-and-olives'>
+          <a href='https://github.com/pickles-and-olives' target="_blank">
             <li>GitHub</li>
           </a>
-          <a href='https://www.linkedin.com/in/melissa-m-99512414b/'>
+          <a href='https://www.linkedin.com/in/melissa-m-99512414b/' target="_blank">
             <li>LinkedIn</li>
           </a>
         </ul>
