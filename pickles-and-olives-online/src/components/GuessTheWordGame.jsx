@@ -123,7 +123,7 @@ export default function GuessTheWordGame({ targetWord, setAdminMessage }) {
             type='text'
             value={guess}
             placeholder='type a word then -->'
-            className='border-2 p-2'
+            className='input input-bordered input-secondary w-full max-w-xs mr-2'
             onFocus={() => {
               setAdminMessage('');
               setWordError(false);
@@ -133,7 +133,7 @@ export default function GuessTheWordGame({ targetWord, setAdminMessage }) {
             }}
           ></input>
 
-          <PinkButton buttonText={'Submit guess'} action={handleSubmitGuess} />
+          <button className='btn btn-secondary ml-2' onClick={handleSubmitGuess}>Submit guess</button>
           <div>{wordError && <span> {wordErrorMessage} </span>}</div>
           {hasWon && (
             <div>

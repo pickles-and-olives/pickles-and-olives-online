@@ -108,29 +108,31 @@ export const MemeGenerator = () => {
       <div className='mx-auto my-2 flex w-2/3 flex-col'>
         {selectedTemplate.memeTextSpaces == 2 && (
           <>
-            <label>Top text: </label>
+            <label className='label'>Top text: </label>
             <input
               type='text'
-              className='m-2 border-2 border-themeYellow'
+              className='input input-bordered w-full max-w-xs'
               value={topText}
               onChange={(event) => setTopText(event.target.value)}
             />
           </>
         )}
-        <label>Bottom text: </label>
+        <label className='label'>Bottom text: </label>
         <input
           type='text'
-          className='m-2 border-2 border-themeYellow'
+          className='input input-bordered w-full max-w-xs'
           value={bottomText}
           onChange={(event) => setBottomText(event.target.value)}
         />
         <div>
-          <GreenButton
+          <button
+          className='btn'
             type='submit'
             disabled={isLoading}
-            buttonText={'Generate'}
-            action={handleSubmit}
-          />
+            onClick={handleSubmit}
+          >
+            Generate
+            </button>
         </div>
       </div>
 

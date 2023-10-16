@@ -47,7 +47,7 @@ export default function AboutPage() {
           <a href='https://github.com/pickles-and-olives' target="_blank">
             <li>GitHub</li>
           </a>
-          <a href='https://www.linkedin.com/in/melissa-m-99512414b/' target="_blank">
+          <a href='https://www.linkedin.com/in/melissa-mcfadzien/' target="_blank">
             <li>LinkedIn</li>
           </a>
         </ul>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 import { YellowButton } from './Buttons';
+
 import { getWord } from '../util/WordUtil';
 import GuessTheWordGame from './GuessTheWordGame';
 import { useLocalStorage } from '../hooks/useLocalStorage';
@@ -48,15 +49,15 @@ export default function GuessTheWordBoard() {
   return (
     <>
       <div className='mx-auto p-4 text-center'>
-        <div className='h-screen bg-gradient-to-b from-themeBlue/30 '>
+        <div className='h-screen'>
           <div className='mx-auto w-full items-center p-4 text-center sm:grid sm:grid-cols-4'>
             <div className='flex flex-col items-center'>
-              <h3>Select your difficulty: </h3>
               <select
                 name='difficultyChoice'
                 onChange={(e) => setDifficulty(e.target.value)}
-                className='w-1/2 rounded-md border-2 border-themePink p-2'
+                className='select-accent select w-full max-w-xs'
               >
+                <option disabled>Select difficulty</option>
                 <option value='normal'>Normal</option>
                 <option value='hard'>Hard</option>
               </select>
@@ -74,8 +75,9 @@ export default function GuessTheWordBoard() {
               </p>
             </div>
             <div>
-              <YellowButton buttonText={'Get new word'} action={handleGetNewWord} />
-
+              <button className='btn' onClick={handleGetNewWord}>
+                Get new word
+              </button>
               {adminMessage && <p>{adminMessage}</p>}
             </div>
           </div>
@@ -87,6 +89,7 @@ export default function GuessTheWordBoard() {
         <div className='mx-auto flex h-screen w-1/2 flex-col items-center justify-end text-center'>
           <YellowButton buttonText={'Give up?'} action={handleGiveUp} />
           {revealWord && <p> The word was... {targetWord}. Better luck next time!</p>}
+          <div></div>
         </div>
       </div>
     </>
